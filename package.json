@@ -13,14 +13,8 @@
     "@discordjs/opus": "github:discordjs/opus",
     "discord.js": "^12.5.1",
     "nana-api": "^1.1.3",
-    "nhentai": "^2.0.0",
-    "nhentai-api": "^3.0.2",
-    "nhentai-api-js": "github:nhentai-dev/API",
-    "nhentai-js": "^4.0.0"
-  }
+  },
+"engines": {
+  "node": "12.16.1"
 }
-{
-  "engines": {
-    "node": "12.16.1"
-  }
 }
