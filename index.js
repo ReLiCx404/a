@@ -151,22 +151,24 @@ client.on('message', (message) => {
 client.on('message', (msg) => {
     const args = msg.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
-    if(command=='sus')
-    {
-        const {voice} = msg.member
-        if(!voice.channelID) 
+    if(args.length < 1) {
+        if(command=='sus')
         {
-            msg.reply('you need to be in a vc you sussy baka')
-            return
+            const {voice} = msg.member
+            if(!voice.channelID) 
+            {
+                msg.reply('you need to be in a vc you sussy baka')
+                return
+            }
+            voice.channel.join().then((connection) => {
+                connection.play(path.join(__dirname,'amogus.mp3'))
+            msg.reply('https://cdn.discordapp.com/attachments/808357174745104436/851515154599772200/artworks-Uii8SMJvNPxy8ePA-romBoQ-t500x500.png')
+            })
+            setTimeout(()=>{
+                msg.member.voice.channel.leave();
+                msg.reply('STOP I CANT TAKE IT ANYMORE I CANT TAKE THIS PAIN ANYMORE PLEASE STOP SAYING SUS IM GOING INSANE STOP MY BRAIN IS MALFUNCTIONING STOP IT JUST STOP I SWEAR IF I SEE ANOTHER ONE OF YOU SAY SUS I WILL COMMIT SUS JUST STOP MESSING WITH ME I CANT SLEEP BECAUSE WHEREVER I GO I SEE HIS FACE HES FOLLOWING ME EVERYWHERE IM SCARED SO STOP')
+            }, 75000)
         }
-        voice.channel.join().then((connection) => {
-            connection.play(path.join(__dirname,'amogus.mp3'))
-        msg.reply('https://cdn.discordapp.com/attachments/808357174745104436/851515154599772200/artworks-Uii8SMJvNPxy8ePA-romBoQ-t500x500.png')
-        })
-        setTimeout(()=>{
-            msg.member.voice.channel.leave();
-            msg.reply('STOP I CANT TAKE IT ANYMORE I CANT TAKE THIS PAIN ANYMORE PLEASE STOP SAYING SUS IM GOING INSANE STOP MY BRAIN IS MALFUNCTIONING STOP IT JUST STOP I SWEAR IF I SEE ANOTHER ONE OF YOU SAY SUS I WILL COMMIT SUS JUST STOP MESSING WITH ME I CANT SLEEP BECAUSE WHEREVER I GO I SEE HIS FACE HES FOLLOWING ME EVERYWHERE IM SCARED SO STOP')
-        }, 75000)
     }
 })
 
