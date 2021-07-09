@@ -149,10 +149,7 @@ client.on('message', (message) => {
     });
 
 client.on('message', (msg) => {
-    const args = msg.content.slice(prefix.length).trim().split(' ');
-    const command = args.shift().toLowerCase();
-    if(args.length <= 0) {
-        if(command === "sus") {
+        if(msg.content === "n!sus") {
             const {voice} = msg.member
             if(!voice.channelID) {
                 msg.reply('you need to be in a vc you sussy baka')
@@ -167,7 +164,6 @@ client.on('message', (msg) => {
                 msg.reply('STOP I CANT TAKE IT ANYMORE I CANT TAKE THIS PAIN ANYMORE PLEASE STOP SAYING SUS IM GOING INSANE STOP MY BRAIN IS MALFUNCTIONING STOP IT JUST STOP I SWEAR IF I SEE ANOTHER ONE OF YOU SAY SUS I WILL COMMIT SUS JUST STOP MESSING WITH ME I CANT SLEEP BECAUSE WHEREVER I GO I SEE HIS FACE HES FOLLOWING ME EVERYWHERE IM SCARED SO STOP')
             }, 75000)
         }
-    }
 })
 
 
