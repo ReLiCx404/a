@@ -151,12 +151,10 @@ client.on('message', (message) => {
 client.on('message', (msg) => {
     const args = msg.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
-    if(args.length < 1) {
-        if(command=='sus')
-        {
+    if(args.length < 0) {
+        if(command === "sus") {
             const {voice} = msg.member
-            if(!voice.channelID) 
-            {
+            if(!voice.channelID) {
                 msg.reply('you need to be in a vc you sussy baka')
                 return
             }
